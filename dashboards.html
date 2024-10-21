@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Leave Management System</title>
+    <link rel="stylesheet" type="text/css" href="/assets/styles/styles.css">
+    <link rel="stylesheet" href="/assets/fa/css/all.min.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .dashboard {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .db-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .db-header h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .header-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        .header-links a:hover {
+            text-decoration: underline;
+        }
+
+        .db-content {
+            margin-top: 20px;
+        }
+
+        .db-content h2 {
+            font-size: 22px;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        .db-content p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 32%; /* Adjust the width to ensure 3 cards in a row */
+            box-sizing: border-box;
+        }
+
+        /* Flexbox layout for cards */
+        .card-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* Leave Card Styling */
+        .leave-card {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .application-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .application-list li {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .notifications ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .notifications ul li {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-left: 5px solid #ffeeba;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .notifications ul li i {
+            margin-right: 10px;
+            color: #856404;
+        }
+
+        @media (max-width: 768px) {
+            /* Stack cards vertically on smaller screens */
+            .card-grid {
+                flex-direction: column;
+            }
+
+            .card {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="dashboard">
+            <div class="db-header">
+                <h1><i class="fas fa-briefcase"></i> Dashboard</h1>
+                <div class="header-links">
+                    <a href="dashboard.html">Profile</a>
+                    <a href="#">Contact</a>
+                    <a href="#">About</a>
+                    <a href="index.html">Logout</a>
+                </div>
+            </div>
+            <div class="db-content">
+                <h2>Welcome to Your Dashboard!</h2>
+                <p>Here you can manage your leave applications, view your leave balance, and check recent updates.</p>
+
+                <!-- Card Grid Layout -->
+                <div class="card-grid">
+
+                    <!-- Leave Balance Section -->
+                    <div class="card">
+                        <h3>Your Leave Balance</h3>
+                        <div class="leave-card">
+                            <p><strong>Casual Leaves:</strong> 5</p>
+                            <p><strong>Sick Leaves:</strong> 2</p>
+                            <p><strong>Annual Leaves:</strong> 12</p>
+                        </div>
+                    </div>
+
+                    <!-- Recent Leave Applications Section -->
+                    <div class="card">
+                        <h3>Recent Leave Applications</h3>
+                        <ul class="application-list">
+                            <li><strong>Application ID:</strong> 1234 | <strong>Status:</strong> Approved | <strong>Type:</strong> Casual Leave | <strong>Date:</strong> 15th Oct 2024</li>
+                            <li><strong>Application ID:</strong> 1235 | <strong>Status:</strong> Pending | <strong>Type:</strong> Sick Leave | <strong>Date:</strong> 17th Oct 2024</li>
+                            <li><strong>Application ID:</strong> 1236 | <strong>Status:</strong> Rejected | <strong>Type:</strong> Casual Leave | <strong>Date:</strong> 20th Oct 2024</li>
+                        </ul>
+                    </div>
+
+                    <!-- Notifications Section -->
+                    <div class="card">
+                        <h3>Notifications</h3>
+                        <ul>
+                            <li><i class="fas fa-info-circle"></i> Your leave application #1235 is pending approval.</li>
+                            <li><i class="fas fa-check-circle"></i> Leave application #1234 has been approved.</li>
+                            <li><i class="fas fa-times-circle"></i> Leave application #1236 was rejected due to insufficient balance.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/js/dashBoard.js"></script>
+</body>
+
+</html>

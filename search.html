@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results | Leave Management System</title>
+    <link rel="stylesheet" type="text/css" href="/assets/styles/styles.css">
+    <link rel="stylesheet" href="/assets/fa/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="dashboard">
+            <div class="db-header">
+                <h1><i class="fas fa-search"></i> Search Results</h1>
+                <div class="header-links">
+                    <a href="dashboard.html">Profile</a>
+                    <a href="#">Contact</a>
+                    <a href="#">About</a>
+                    <a href="index.html">Logout</a>
+                </div>
+            </div>
+            <div class="db-content">
+                <h2>Search Results for: <strong>"<span id="search-query"></span>"</strong></h2>
+                <ul id="results-list">
+                    <!-- Dynamic search results will be populated here -->
+                </ul>
+                <p id="not-found-message" style="display: none; color: red;">Not found</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get query from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('query');
+        document.getElementById('search-query').textContent = query;
+
+        // Placeholder for dynamic results
+        const results = []; // Update this array with actual search results
+        const resultsList = document.getElementById('results-list');
+        const notFoundMessage = document.getElementById('not-found-message');
+
+        if (results.length === 0) {
+            notFoundMessage.style.display = 'block'; // Show "not found" message
+        } else {
+            results.forEach(result => {
+                const li = document.createElement('li');
+                li.textContent = result;
+                resultsList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+
+</html>

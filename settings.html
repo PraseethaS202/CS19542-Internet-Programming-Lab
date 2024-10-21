@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Leave Management System</title>
+    <link rel="stylesheet" type="text/css" href="/assets/styles/styles.css">
+    <link rel="stylesheet" href="/assets/fa/css/all.min.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-theme {
+            background-color: #1e1e1e;
+            color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .dashboard {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark-theme .dashboard {
+            background-color: #333;
+            color: #f0f0f0;
+        }
+
+        .db-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .dark-theme .db-header {
+            border-bottom-color: #555;
+        }
+
+        .db-header h1 {
+            font-size: 28px;
+            color: #333;
+        }
+
+        .dark-theme .db-header h1 {
+            color: #f0f0f0;
+        }
+
+        .header-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .header-links a:hover {
+            color: #0056b3;
+        }
+
+        .dark-theme .header-links a {
+            color: #1e90ff;
+        }
+
+        .db-content h2 {
+            font-size: 24px;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .dark-theme .db-content h2 {
+            color: #f0f0f0;
+        }
+
+        .db-content {
+            margin-top: 20px;
+        }
+
+        /* Form Styling */
+        form {
+            display: grid;
+            gap: 15px;
+            background-color: #f7f7f7;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark-theme form {
+            background-color: #444;
+            box-shadow: none;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .dark-theme label {
+            color: #f0f0f0;
+        }
+
+        input[type="email"], input[type="password"], select {
+            padding: 12px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #333;
+            transition: border-color 0.3s ease;
+        }
+
+        .dark-theme input[type="email"], .dark-theme input[type="password"], .dark-theme select {
+            background-color: #666;
+            color: #f0f0f0;
+            border: 1px solid #555;
+        }
+
+        input[type="email"]:focus, input[type="password"]:focus, select:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        .dark-theme input[type="email"]:focus, .dark-theme input[type="password"]:focus, .dark-theme select:focus {
+            border-color: #1e90ff;
+        }
+
+        button[type="submit"] {
+            padding: 12px 20px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dark-theme button[type="submit"] {
+            background-color: #1e90ff;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .dark-theme button[type="submit"]:hover {
+            background-color: #0066cc;
+        }
+
+        /* Dark Theme Toggle Switch */
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .theme-toggle input {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="dashboard">
+            <div class="db-header">
+                <h1><i class="fas fa-cog"></i> Settings</h1>
+                <div class="header-links">
+                    <a href="dashboards.html">Profile</a>
+                    <a href="#">Contact</a>
+                    <a href="#">About</a>
+                    <a href="index.html">Logout</a>
+                </div>
+            </div>
+            <div class="db-content">
+                <h2>Account Settings</h2>
+                <form>
+                    <label for="email">Email:
+                        <span class="tooltip"><i class="fas fa-info-circle"></i>
+                            <span class="tooltiptext">Change your login email.</span>
+                        </span>
+                    </label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="password">Password:
+                        <span class="tooltip"><i class="fas fa-info-circle"></i>
+                            <span class="tooltiptext">Change your password.</span>
+                        </span>
+                    </label>
+                    <input type="password" id="password" name="password" required>
+
+                    <label for="notifications">Notifications:
+                        <span class="tooltip"><i class="fas fa-info-circle"></i>
+                            <span class="tooltiptext">Enable or disable email notifications.</span>
+                        </span>
+                    </label>
+                    <select id="notifications" name="notifications">
+                        <option value="on">On</option>
+                        <option value="off">Off</option>
+                    </select>
+
+                    <button type="submit">Save Changes</button>
+                </form>
+
+                <!-- Dark Theme Toggle -->
+                <div class="theme-toggle">
+                    <input type="checkbox" id="theme-switch">
+                    <label for="theme-switch">Enable Dark Theme</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const themeSwitch = document.getElementById('theme-switch');
+        const body = document.body;
+
+        // Check if dark theme was enabled earlier
+        if (localStorage.getItem('dark-theme') === 'enabled') {
+            body.classList.add('dark-theme');
+            themeSwitch.checked = true;
+        }
+
+        themeSwitch.addEventListener('change', function () {
+            if (this.checked) {
+                body.classList.add('dark-theme');
+                localStorage.setItem('dark-theme', 'enabled');
+            } else {
+                body.classList.remove('dark-theme');
+                localStorage.setItem('dark-theme', 'disabled');
+            }
+        });
+    </script>
+</body>
+
+</html>
